@@ -1,4 +1,19 @@
 {
   "name": "Basic Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/base:debian"
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "postCreateCommand": ".devcontainer/postCreate.sh",
+  "features": {
+    "ghcr.io/stu-bell/devcontainer-features/python:0": {
+      "installTools": true,
+      "min_python_version": "3.12"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy"
+      ]
+    }
+  }
 }
